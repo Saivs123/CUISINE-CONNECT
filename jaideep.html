@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuisine Connect</title>
+    <style>
+        #signup{
+            width: 300px;
+            background-color: lightcyan;
+            padding:25px;
+            margin-left: auto;
+            margin-right:auto ;
+        }
+        .input-item{
+            width: 100%;
+        }
+        #signup1{
+            margin: 0;
+            margin-bottom: 4px;
+            margin-top: 12px;
+            width: 100%;
+            background-color: lightgreen;
+
+        }
+        .input-label {
+            margin: 0;
+            margin-bottom: 4px;
+            margin-top: 12px;
+        }
+        #main{
+                text-align: center; 
+                font-size: 30px;
+                background-color: lightgrey;
+                
+        }
+        #heading{
+            margin-left: auto;
+                margin-right:auto ;
+        }
+        #foot{
+            color: white;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'); background-size: cover;">
+    <div id="heading"><h3 id="main">Welcome to Cuisine Connect</h3></div>
+    
+    <form id="signup">
+        <h2>Signup</h2>
+        <p class="input-label">Name:</p> 
+        <input class="input-item" type="text" name="username">
+        <p class="input-label">Email:</p>
+        <input class="input-item"  type="text" name="Email">
+        <p class="input-label">Phone.No:</p>
+        <input class="input-item"  type="text" name="Phone.No">
+        <p class="input-label">Password: </p>
+        <input class="input-item"  type="password" name="password">
+        <p class="input-label">Confirm Password: </p>
+        <input class="input-item"  type="password" name="password">
+        <button id='signup1' >Sign Up!</button><br/>
+    </form>
+    <script>
+        function validateForm() {
+            var phoneNo = document.getElementById('phno').value;
+            var username = document.getElementById('usernm').value;
+            var email = document.getElementById('eml').value;
+            var password = document.getElementById('pswd').value;
+            if (!phoneNo || isNaN(phoneNo) || phoneNo.length !== 10) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+    
+            if (!username || username.trim() === '') {
+                alert("Please enter a valid username.");
+                return false;
+            }
+    
+            if (!email || !validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+    
+            if (!password || password.length < 6) {
+                alert("Please enter a password with at least 6 characters.");
+                return false;
+            }
+    
+            // If all validations pass, redirect to another HTML document
+            window.location.href ='cuisine connnect.html'
+    
+            // Prevent the form from submitting (since we're redirecting manually)
+            return false;
+        }
+    
+        // Helper function to validate email format
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+</body>
+<footer id="foot">
+    &copy;<NAME>, All Rights Reserved at Cuisine Connect!
+</footer>
+</html>
